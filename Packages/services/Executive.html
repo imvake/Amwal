@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <head>
+    <link rel="stylesheet" href="js/bootstrap.min.css" />
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/frontpage.css"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <style>
+      body {
+        background-color: white; /* #222022or background-image: url('image.jpg'); */
+      }
+
+      table {
+        width: 80%; /* Adjust to desired width */
+        height: 300px; /* Adjust to desired height */
+        margin: 50px auto 0; /* Add margin-top of 50px */
+        max-height: 300px; /* Add maximum height for table */
+        overflow-y: auto; /* Add scrollbar when content exceeds max-height */
+        /*border-collapse: collapse; */ /* removes the space between cells */
+        border-spacing: 2px; /* removes the space between cells */
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid white;
+        border-radius: 10px;
+      }
+      td:first-child:hover {
+        background-color: #f2f2f2;
+        /*cursor: pointer;*/
+        background-color: #decc90;
+      }
+      td:first-child:hover ~ td {
+        transform: scale(0.95);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      tr:hover td {
+        background-color: #c6a32d;
+      } /*DECC90*/
+
+      th {
+        background-color: #c6a32d;
+        color: white;
+        border-top: 0px white;
+        border-bottom: 0px solid black;
+        border-spacing: 2px;
+      }
+
+      td.basic {
+        background-color: #e6e6e6;
+      }
+      td.pro {
+        background-color: #e6e6e6;
+      }
+      td.premium {
+        background-color: #e6e6e6;
+      }
+      td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #c6a32d;
+        background-color: #f2f2f2;
+        border-left: 1px solid #c6a32d;
+        border-right: 1px solid #c6a32d;
+      }
+
+      /* Add styles for the pricing */
+      .pricing {
+        font-size: 2em;
+        color: #151515;
+      }
+      td.pri {
+        background-color: #c6a32d;
+        pointer-events: none;
+      }
+      /*        #progressbar {
+margin-bottom: 30px;
+overflow: hidden;
+color: lightgrey;
+    }
+    #progressbar .active {
+color: #000000;
+}*/
+
+      /*form styles*/
+      #msform {
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      #msform fieldset .form-card {
+        border: 0 none;
+        border-radius: 0px;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+        padding: 20px 40px 30px 40px;
+        box-sizing: border-box;
+        width: 94%;
+        margin: 0 3% 20px 3%;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+      }
+
+      #msform fieldset {
+        border: 0 none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+      }
+
+      /*Hide all except first fieldset*/
+      #msform fieldset:not(:first-of-type) {
+        display: none;
+      }
+
+      #msform fieldset .form-card {
+        text-align: left;
+        color: black;
+      }
+
+      #msform input,
+      #msform textarea {
+        padding: 0px 8px 4px 8px;
+        border: none;
+        border-bottom: 1px solid;
+        border-radius: 0px;
+        margin-bottom: 25px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2c3e50;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      #msform input:focus,
+      #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none;
+        font-weight: bold;
+        border-bottom: 2px solid;
+        outline-width: 0;
+      }
+
+      /*Blue Buttons*/
+      #msform .action-button {
+        width: 100px;
+        background: #c6a32d;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+      }
+
+      #msform .action-button:hover,
+      #msform .action-button:focus {
+        box-shadow: 0 0 0 2px, 0 0 0 3px rgb(0, 0, 0);
+      }
+
+      /*Previous Buttons*/
+      #msform .action-button-previous {
+        width: 100px;
+        background: #c6a32d;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+      }
+
+      #msform .action-button-previous:hover,
+      #msform .action-button-previous:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #000000;
+      }
+
+      /*Dropdown List Exp Date*/
+      select.list-dt {
+        border: none;
+        outline: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 2px 5px 3px 5px;
+        margin: 2px;
+      }
+
+      select.list-dt:focus {
+        border-bottom: 2px solid skyblue;
+      }
+
+      /*The background card*/
+      .card {
+        z-index: 0;
+        border: none;
+        border-radius: 0.5rem;
+        position: relative;
+      }
+
+      /*FieldSet headings*/
+      .fs-title {
+        font-size: 25px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      /*progressbar*/
+      #progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        color: lightgrey;
+      }
+
+      #progressbar .active {
+        color: #c6a32d;
+      }
+
+      #progressbar li {
+        list-style-type: none;
+        font-size: 12px;
+        width: 25%;
+        float: left;
+        position: relative;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      /*Icons in the ProgressBar*/
+      #progressbar #account:before {
+        font-family: FontAwesome;
+        content: "✓";
+      }
+
+      #progressbar #personal:before {
+        font-family: FontAwesome;
+      }
+
+      #progressbar #payment:before {
+        font-family: FontAwesome;
+      }
+
+      #progressbar #confirm:before {
+        font-family: FontAwesome;
+      }
+
+      /*ProgressBar before any progress*/
+      #progressbar li:before {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        display: block;
+        font-size: 18px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px;
+        background-color: red;
+        content: "✓";
+      }
+
+      /*ProgressBar connectors*/
+      #progressbar li:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: lightgray;
+        position: absolute;
+        left: 0;
+        top: 25px;
+        background-color: red;
+        z-index: -1;
+      }
+
+      #value-cell-1 td {
+        cursor: pointer;
+      }
+
+      /*Color number of the step and the connector before it*/
+      #progressbar li.active:before,
+      #progressbar li.active:after {
+        background: #c6a32d;
+      }
+
+      /*Imaged Radio Buttons*/
+      .radio-group {
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+      .radio {
+        display: inline-block;
+        width: 204;
+        height: 104;
+        border-radius: 0;
+        background: lightblue;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 8px 2px;
+      }
+
+      .radio:hover {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .radio.selected {
+        box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      /*Fit image in bootstrap div*/
+      .fit-image {
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+
+    <title>Pricing Table</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var opacity;
+
+        $(".next").click(function () {
+          current_fs = $(this).parent();
+          next_fs = $(this).parent().next();
+
+          //Add Class Active
+          $("#progressbar li")
+            .eq($("fieldset").index(next_fs))
+            .addClass("active");
+
+          //show the next fieldset
+          next_fs.show();
+          //hide the current fieldset with style
+          current_fs.animate(
+            { opacity: 0 },
+            {
+              step: function (now) {
+                // for making fielset appear animation
+                opacity = 1 - now;
+
+                current_fs.css({
+                  display: "none",
+                  position: "relative",
+                });
+                next_fs.css({ opacity: opacity });
+              },
+              duration: 600,
+            }
+          );
+        });
+
+        $(".previous").click(function () {
+          current_fs = $(this).parent();
+          previous_fs = $(this).parent().prev();
+
+          //Remove class active
+          $("#progressbar li")
+            .eq($("fieldset").index(current_fs))
+            .removeClass("active");
+
+          //show the previous fieldset
+          previous_fs.show();
+
+          //hide the current fieldset with style
+          current_fs.animate(
+            { opacity: 0 },
+            {
+              step: function (now) {
+                // for making fielset appear animation
+                opacity = 1 - now;
+
+                current_fs.css({
+                  display: "none",
+                  position: "relative",
+                });
+                previous_fs.css({ opacity: opacity });
+              },
+              duration: 600,
+            }
+          );
+        });
+
+        $(".radio-group .radio").click(function () {
+          $(this).parent().find(".radio").removeClass("selected");
+          $(this).addClass("selected");
+        });
+
+        $(".submit").click(function () {
+          return false;
+        });
+      });
+    </script>
+
+    <table style="margin-top: -40px; padding-top: 100px">
+      <h3 class="h1 text-center p-4">Executive Package</h3>
+      <tr class="">
+        <td style="text-align: center" class="pri">Discount available if</td>
+        <td style="text-align: center; display: none" id="Initial" class="pri">
+          Initial
+        </td>
+        <td style="text-align: center" id="Executive" class="pri Executive">
+          Executive
+        </td>
+        <td
+          style="text-align: center; display: none"
+          id="Executive"
+          class="pri"
+        >
+          Customized
+        </td>
+      </tr>
+      <tr>
+        <td>Quotation available</td>
+        <td
+          class="value-cell-1"
+          id="class-1-value-1"
+          style="text-align: center; display: none"
+          data-value="2"
+        >
+          2%
+        </td>
+        <td
+          class="value-cell-2"
+          id="class-1-value-2"
+          style="text-align: center"
+          data-value="3"
+        >
+          3%
+        </td>
+        <td style="text-align: center; display: none" data-value="3">5%</td>
+      </tr>
+      <tr>
+        <td>Financial Statement Available</td>
+        <td
+          class="value-cell-1"
+          id="class-2-value-1"
+          style="text-align: center; display: none"
+          data-value="2"
+        >
+          2%
+        </td>
+        <td
+          class="value-cell-2"
+          id="class-2-value-2"
+          style="text-align: center"
+          data-value="5"
+        >
+          5%
+        </td>
+        <td style="text-align: center; display: none" data-value="5">5%</td>
+      </tr>
+      <tr>
+        <td>Previous Feasibility study</td>
+        <td
+          class="value-cell-1"
+          id="class-3-value-1"
+          style="text-align: center; display: none"
+          data-value="3"
+        >
+          3%
+        </td>
+        <td
+          class="value-cell-2"
+          id="class-3-value-2"
+          style="text-align: center"
+          data-value="4"
+        >
+          4%
+        </td>
+        <td style="text-align: center; display: none" data-value="5">5%</td>
+      </tr>
+      <tr>
+        <td>70% Advance Payment</td>
+        <td
+          class="value-cell-1"
+          id="class-4-value-1"
+          style="text-align: center; display: none"
+          data-value="3"
+        >
+          3%
+        </td>
+        <td
+          class="value-cell-2"
+          id="class-4-value-2"
+          style="text-align: center"
+          data-value="3"
+        >
+          3%
+        </td>
+        <td style="text-align: center; display: none" data-value="5">5%</td>
+      </tr>
+      <tr>
+        <td>Discounte Percentage</td>
+        <td id="total-value-1" style="text-align: center; display: none">0%</td>
+        <td id="total-value-2" style="text-align: center">0%</td>
+        <td id="total-value-2" style="text-align: center; display: none">
+          20%
+        </td>
+      </tr>
+      <tr>
+        <td>Total Discount</td>
+        <td
+          id="total-value-3"
+          style="
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline double;
+            display: none;
+          "
+        >
+          0
+        </td>
+        <td
+          id="total-value-4"
+          style="
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline double;
+          "
+        >
+          0
+        </td>
+        <td id="total-value-2" style="text-align: center; display: none"></td>
+      </tr>
+      <tr>
+        <td>Total Price after Discount</td>
+        <td
+          id="total-value-5"
+          style="
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline double;
+            display: none;
+          "
+        >
+          0
+        </td>
+        <td
+          id="total-value-6"
+          style="
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline double;
+          "
+        >
+          0
+        </td>
+        <td
+          class="value-cell-2"
+          id="class-2-value-2"
+          style="text-align: center; display: none"
+          data-value="5"
+        >
+          Should discuss
+        </td>
+      </tr>
+    </table>
+    <div class="container">
+      <div class="row">
+        <table id="tblcreators" class="table text-center table-striped">
+          <thead class="text-uppercase">
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col">Package</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Feasibility study</th>
+              <td>Executive</td>
+              <td>4,500 OMR</td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>After Discount</td>
+              <td
+                id="total-value-3"
+                style="
+                  text-align: center;
+                  font-weight: bold;
+                  text-decoration: underline double;
+                "
+              ></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>SubTotal</td>
+              <td
+                id="total-value-3"
+                style="
+                  text-align: center;
+                  font-weight: bold;
+                  text-decoration: underline double;
+                "
+              ></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                id="name"
+                required
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="Email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Example@gmail.com"
+                id="Email"
+                required
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="tel">Phone</label>
+              <input
+                type="tel"
+                class="form-control"
+                placeholder="912345678"
+                id="tel"
+                required
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label for="CR">CR (Optional)</label>
+              <input
+                type="text"
+                class="form-control"
+                id="CR"
+                placeholder="CR"
+              />
+            </div>
+          </div>
+          <!--  col-md-6   -->
+        </div>
+        <!-- Button to trigger the popup -->
+        <button type="submit" onclick="getDetails()" class="btn btn-primary">
+          Submit
+        </button>
+
+        <!-- Modal popup container -->
+        <div
+          id="invoicePopup"
+          class="modal"
+          style="display: none; margin: auto"
+        >
+          <div class="modal-content justify-content-center card">
+            <div
+              style="border: 5px solid; margin: auto; width: 50%; padding: 10px"
+            >
+              <div id="invoiceDetails"></div>
+            </div>
+            <div style="padding-bottom: 100%">
+              <button id="closeBtn" class="btn btn-primary">Close</button>
+              <button id="downloadBtn" class="btn btn-primary">
+                Download Invoice
+              </button>
+              <script src="https://smtpjs.com/v3/smtp.js"></script>
+              <button onclick="send()" class="btn btn-primary">
+                Send Invoice
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.0/html2canvas.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+      <script>
+        function getDetails() {
+          const name = document.getElementById("name").value;
+          const Email = document.getElementById("Email").value;
+          const tel = document.getElementById("tel").value;
+          const CR = document.getElementById("CR").value;
+
+          function getCurrentDate() {
+            const currentDate = new Date();
+
+            // Get the date components
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+            const day = String(currentDate.getDate()).padStart(2, "0");
+
+            // Format the date as desired
+            const formattedDate = `${day}-${month}-${year}`;
+
+            return formattedDate;
+          }
+
+          const currentDate = getCurrentDate();
+
+          const invoiceContent = `
+              <h2>Invoice</h2>
+              <div class="row">
+                <div class="col-6">
+                  <caption>To: ${name}</caption>
+                </div>
+                <div class="col-6">
+                  <caption>Company Name: ${name}</caption>
+                </div>
+                <div class="col-6">
+                  <caption>Type Of Work: ERP Service</caption>
+                </div>
+                <div class="col-6">
+                  <caption>Date: ${currentDate}</caption>
+                </div>
+                <div class="col-12">
+                  <caption>VATIN: OM1100237412</caption>
+                </div>
+              </div>
+        
+              <table class="demo">
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ERP Service</td>
+                    <td>600 OMR</td>
+                  </tr>
+                  <tr>
+                    <td>VAT 5%</td>
+                    <td>totalprice = Service * 0.05%</td>
+                  </tr>
+                  <tr>
+                    <td>Total</td>
+                    <td>totalprice</td>
+                  </tr>
+                </tbody>
+              </table>
+            `;
+
+          const invoiceDetails = document.getElementById("invoiceDetails");
+          invoiceDetails.innerHTML = invoiceContent;
+
+          // Show the modal container
+          const invoicePopup = document.getElementById("invoicePopup");
+          invoicePopup.style.display = "block";
+
+          // Add event listener to close button
+          const closeBtn = document.getElementById("closeBtn");
+          closeBtn.addEventListener("click", function () {
+            // Hide the modal container when close button is clicked
+            invoicePopup.style.display = "none";
+          });
+
+          // Add event listener to download button
+          const downloadBtn = document.getElementById("downloadBtn");
+          downloadBtn.addEventListener("click", function () {
+            // Generate PDF from the invoice content using html2canvas and jsPDF
+            html2canvas(document.getElementById("invoiceDetails")).then(
+              function (canvas) {
+                const imgData = canvas.toDataURL("image/png");
+                const pdf = new jsPDF();
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+                pdf.save("invoice.pdf");
+              }
+            );
+          });
+        }
+      </script>
+    </div>
+    <script>
+      function send() {
+        Email.send({
+          Host: "smtp.elasticemail.com",
+          Username: "info@amwal.om",
+          Password: "1A79978194941A240BD14E11E8B3A5259F40",
+          To: "info@amwal.om",
+          From: "info@amwal.om",
+          Subject: "Executive Package",
+          Body: `CR is ${document.getElementById("CR").value} <br>
+             and the total is total, <br>
+             Customization Package,<br>
+              Email ${document.getElementById("Email").value} <br>
+              Name: ${document.getElementById("name").value} <br>
+              Phone No: ${document.getElementById("tel").value}
+              `,
+        }).then((message) => alert(message));
+      }
+    </script>
+    <script>
+      // end of the packages src
+
+      const valueCells1 = document.querySelectorAll(
+        ".value-cell-1, .value-cell-2"
+      );
+      let totalValue1 = 0;
+      let totalValue2 = 0;
+
+      valueCells1.forEach((cell) => {
+        cell.addEventListener("click", function () {
+          const value = parseInt(this.getAttribute("data-value"));
+          if (this.style.backgroundColor === "green") {
+            if (this.classList.contains("value-cell-1")) {
+              totalValue1 -= value;
+            } else {
+              totalValue2 -= value;
+            }
+            this.style.backgroundColor = "";
+          } else {
+            if (this.classList.contains("value-cell-1")) {
+              totalValue1 += value;
+            } else {
+              totalValue2 += value;
+            }
+            this.style.backgroundColor = "green";
+          }
+          document.querySelector("#total-value-1").textContent =
+            totalValue1 + "%";
+          document.querySelector("#total-value-2").textContent =
+            totalValue2 + "%";
+          document.querySelector("#total-value-3").textContent =
+            (totalValue1 * 1100) / 100 + " OMR";
+          document.querySelector("#total-value-4").textContent =
+            (totalValue2 * 4500) / 100 + " OMR";
+          document.querySelector("#total-value-5").textContent =
+            1100 - (totalValue1 * 1100) / 100 + " OMR";
+          document.querySelector("#total-value-6").textContent =
+            4500 - (totalValue2 * 4500) / 100 + " OMR";
+
+          // Show only the selected package column
+          const selectedPackage = document
+            .getElementById("selItem")
+            .textContent.trim()
+            .toLowerCase();
+          const columns = document.querySelectorAll(
+            ".pri:not(#" + selectedPackage + ")"
+          );
+          columns.forEach((column) => {
+            column.style.display = "none";
+          });
+          const selectedColumn = document.getElementById(selectedPackage);
+          selectedColumn.style.display = "table-cell";
+        });
+      });
+    </script>
+  </body>
+</html>

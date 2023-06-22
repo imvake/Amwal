@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Pricing Table</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="../assets/css/templatemo-onix-digital.css" />
+    <link rel="stylesheet" href="../assets/css/animated.css" />
+    <link rel="stylesheet" href="../assets/css/owl.css" />
+
+        <style>
+      body {
+          background-color: white !important; /* #222022or background-image: url('image.jpg'); */
+      }
+  
+      table {
+          width: 80%; /* Adjust to desired width */
+          height: 300px; /* Adjust to desired height */
+          margin: 50px auto 0; /* Add margin-top of 50px */
+          max-height: 300px; /* Add maximum height for table */
+          overflow-y: auto; /* Add scrollbar when content exceeds max-height */
+          /*border-collapse: collapse; *//* removes the space between cells */
+          border-spacing: 2px; /* removes the space between cells */
+          
+          
+      }
+  
+  th, td {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid white;
+  border-radius: 10px;
+  }
+  td:first-child:hover {
+  background-color: #f2f2f2;
+  /*cursor: pointer;*/
+  background-color: #DECC90;
+  }
+  td:first-child:hover ~ td {
+  transform: scale(0.95);
+  transition: transform 0.2s ease-in-out;
+  }
+  
+  tr:hover td {
+  background-color: #C6a32d;
+  } /*DECC90*/
+  
+  th {
+  background-color: #C6a32d;
+  color: white;
+  border-top: 0px white;
+  border-bottom: 0px solid black;
+  border-spacing: 2px;
+  }
+  
+  td.basic {
+  background-color: #e6e6e6;
+  }
+  td.pro {
+  background-color: #e6e6e6;
+  }
+  td.premium {
+  background-color: #e6e6e6;
+  }
+  td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #C6a32d;
+  background-color: #f2f2f2;
+  border-left: 1px solid #C6a32d;
+  border-right: 1px solid #C6a32d;
+  }
+  
+  
+      /* Add styles for the pricing */
+      .pricing {
+          font-size: 2em;
+          color: #151515;
+      }
+      td.pri 
+      {
+          background-color: #C6a32d;
+          pointer-events: none;
+      }
+  /*        #progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+      }
+      #progressbar .active {
+  color: #000000;
+  }*/
+  
+  
+  /*form styles*/
+  #msform {
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+  }
+  .hovering:hover{
+      cursor: pointer;
+  }
+  
+  #msform fieldset .form-card {
+  
+  border: 0 none;
+  border-radius: 0px;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 20px 40px 30px 40px;
+  box-sizing: border-box;
+  width: 94%;
+  margin: 0 3% 20px 3%;
+  
+  /*stacking fieldsets above each other*/
+  position: relative;
+  }
+  
+  #msform fieldset {
+  
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  
+  /*stacking fieldsets above each other*/
+  position: relative;
+  }
+  
+  /*Hide all except first fieldset*/
+  #msform fieldset:not(:first-of-type) {
+  display: none;
+  }
+  
+  #msform fieldset .form-card {
+  text-align: left;
+  color: black;
+  }
+  
+  #msform input, #msform textarea {
+  padding: 0px 8px 4px 8px;
+  border: none;
+  border-bottom: 1px solid;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2C3E50;
+  font-size: 16px;
+  letter-spacing: 1px;
+  }
+  
+  #msform input:focus, #msform textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: none;
+  font-weight: bold;
+  border-bottom: 2px solid;
+  outline-width: 0;
+  }
+  
+  /*Blue Buttons*/
+  #msform .action-button {
+  width: 100px;
+  background: #C6a32d;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  }
+  
+  #msform .action-button:hover, #msform .action-button:focus {
+  box-shadow: 0 0 0 2px, 0 0 0 3px rgb(0, 0, 0);
+  }
+  
+  /*Previous Buttons*/
+  #msform .action-button-previous {
+  width: 100px;
+  background: #C6a32d;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 25px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px;
+  }
+  
+  #msform .action-button-previous:hover, #msform .action-button-previous:focus {
+  box-shadow: 0 0 0 2px white, 0 0 0 3px #000000;
+  }
+  
+  /*Dropdown List Exp Date*/
+  select.list-dt {
+  border: none;
+  outline: 0;
+  border-bottom: 1px solid #ccc;
+  padding: 2px 5px 3px 5px;
+  margin: 2px;
+  }
+  
+  select.list-dt:focus {
+  border-bottom: 2px solid skyblue;
+  }
+  
+  /*The background card*/
+  .card {
+  z-index: 0;
+  border: none;
+  border-radius: 0.5rem;
+  position: relative;
+  }
+  
+  /*FieldSet headings*/
+  .fs-title {
+  font-size: 25px;
+  color: #2C3E50;
+  margin-bottom: 10px;
+  font-weight: bold;
+  text-align: left;
+  }
+  
+  /*progressbar*/
+  #progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+  }
+  
+  #progressbar .active {
+  color: #C6a32d;
+  }
+  
+  #progressbar li {
+  list-style-type: none;
+  font-size: 12px;
+  width: 25%;
+  float: left;
+  position: relative;
+  text-align: center;
+  margin-top: 10px;
+  }
+  
+  /*Icons in the ProgressBar*/
+  #progressbar #account:before {
+  font-family: FontAwesome;
+  content: "✓";
+  }
+  
+  #progressbar #personal:before {
+  font-family: FontAwesome;
+  
+  }
+  
+  #progressbar #payment:before {
+  font-family: FontAwesome;
+  
+  }
+  
+  #progressbar #confirm:before {
+  font-family: FontAwesome;
+  
+  }
+  
+  /*ProgressBar before any progress*/
+  #progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 18px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+   background-color: red;
+  content: "✓";
+  }
+  
+  /*ProgressBar connectors*/
+  #progressbar li:after {
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  background-color: red;
+  z-index: -1;
+  }
+  
+  #value-cell-1 td {
+      cursor: pointer;
+  }
+  
+  /*Color number of the step and the connector before it*/
+  #progressbar li.active:before, #progressbar li.active:after {
+  background: #C6a32d;
+  }
+  
+  /*Imaged Radio Buttons*/
+  .radio-group {
+  position: relative;
+  margin-bottom: 25px;
+  }
+  
+  .radio {
+  display:inline-block;
+  width: 204;
+  height: 104;
+  border-radius: 0;
+  background: lightblue;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  cursor:pointer;
+  margin: 8px 2px; 
+  }
+  
+  .radio:hover {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .radio.selected {
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*Fit image in bootstrap div*/
+  .fit-image{
+  width: 100%;
+  object-fit: cover;
+  }   
+  </style>
+  </head>
+
+  <body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+      <div class="preloader-inner">
+        <span class="dot"></span>
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- ***** Header Area Start ***** -->
+
+    <!-- ***** Header Area End ***** -->
+
+    <!-- Scripts -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/owl-carousel.js"></script>
+    <script src="../assets/js/animation.js"></script>
+    <script src="../assets/js/imagesloaded.js"></script>
+    <script src="../assets/js/custom.js"></script>
+
+    <script>
+      // Acc
+      $(document).on("click", ".naccs .menu div", function () {
+        var numberIndex = $(this).index();
+
+        if (!$(this).is("active")) {
+          $(".naccs .menu div").removeClass("active");
+          $(".naccs ul li").removeClass("active");
+
+          $(this).addClass("active");
+          $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .addClass("active");
+
+          var listItemHeight = $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .innerHeight();
+          $(".naccs ul").height(listItemHeight + "px");
+        }
+      });
+    </script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+      
+  var current_fs, next_fs, previous_fs; //fieldsets
+  var opacity;
+  
+  $(".next").click(function(){
+      
+      current_fs = $(this).parent();
+      next_fs = $(this).parent().next();
+      
+      //Add Class Active
+      $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+      
+      //show the next fieldset
+      next_fs.show(); 
+      //hide the current fieldset with style
+      current_fs.animate({opacity: 0}, {
+          step: function(now) {
+              // for making fielset appear animation
+              opacity = 1 - now;
+  
+              current_fs.css({
+                  'display': 'none',
+                  'position': 'relative'
+              });
+              next_fs.css({'opacity': opacity});
+          }, 
+          duration: 600
+      });
+  });
+  
+  $(".previous").click(function(){
+      
+      current_fs = $(this).parent();
+      previous_fs = $(this).parent().prev();
+      
+      //Remove class active
+      $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+      
+      //show the previous fieldset
+      previous_fs.show();
+  
+      //hide the current fieldset with style
+      current_fs.animate({opacity: 0}, {
+          step: function(now) {
+              // for making fielset appear animation
+              opacity = 1 - now;
+  
+              current_fs.css({
+                  'display': 'none',
+                  'position': 'relative'
+              });
+              previous_fs.css({'opacity': opacity});
+          }, 
+          duration: 600
+      });
+  });
+  
+  $('.radio-group .radio').click(function(){
+      $(this).parent().find('.radio').removeClass('selected');
+      $(this).addClass('selected');
+  });
+  
+  $(".submit").click(function(){
+      return false;
+  })
+      
+  });
+  </script>
+  <!-- MultiStep Form -->
+  <div class="container-fluid" id="grad1">
+      <div class="row justify-content-center mt-0">
+          <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
+              <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+                  <div class="row">
+                      <div class="col-md-12 mx-0">
+                          <form id="msform">
+                              <!-- progressbar -->
+                              <ul id="progressbar">
+                                  <li  class="active" id="account"><strong>Market Study</strong></li>
+                                  <li id="personal"><strong>Technical Study</strong></li>
+                                  <li id="payment"><strong>Financial Study</strong></li>
+                                  <li id="confirm"><strong>Pricing</strong></li>
+                              </ul>
+                              <!-- fieldsets -->
+                              <fieldset>
+                                  <div class="form-card" style="margin-top: -60px; border: none; box-shadow: none; display: inline;"> 
+                                      <table style="margin-top: -40px;">
+                                          <tr>
+                                              <th style="background-color: white;"></th>
+                                              <th>Initial</th>
+                                              <th>Executive</th>
+                                              <th>Customized</th>
+                                          </tr>
+                                          <tr>
+                                              <td class="pri"><b>Market Study</td></b>
+                                           
+                                          </tr>
+                                          <tr>
+                                              <td>Industry overview</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Products and uses</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Quality aspects</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Barriers of entry</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Market segments</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Target markets</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Demand gap analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Demand estimates</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Projected market share</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Competitors analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="font-weight: bold; ">3 Competitors
+                                  </span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="font-weight: bold; ">5 - 10 Competitors
+                                  </span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="font-weight: bold; ">Customized
+                                  </span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Market research analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Marketing mix (4Ps)</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Critical success factors</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Emerging trends</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>SWOT analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Market study conclusion</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                      </table>
+                                  </div>
+                                  <input type="button" name="next" class="next action-button" value="Next Step"/>
+                              </fieldset>
+                              <fieldset>
+                                  <div class="form-card" style="margin-top: -60px; border: none; box-shadow: none; display: inline;"> 
+                                      <table style="margin-top: -40px;">
+                                          <tr>
+                                              <th style="background-color: white;"></th>
+                                              <th>Initial</th>
+                                              <th>Executive</th>
+                                              <th>Customized</th>
+                                          </tr>
+                                  
+                                          <tr>
+                                              <td class="pri"><b>Technical Study</b></td>
+                                             
+                                          </tr>
+                                          <tr>
+                                              <td>Project location (Break Even Place)</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Production process ( product)<br> / Blueprint (service)</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Production capacity utilized</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Determining Assists and civil work</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Machinery & equipment Quotation</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Manufacturing Utilities calculation</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Manpower requirements</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Raw materials and source of raw materials</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Quality control issues</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Environmental impact</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Scheduled project implementation</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Technical study conclusion</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                      </table>
+                                  </div>
+                                  <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                  <input type="button" name="next" class="next action-button" value="Next Step"/>
+                              </fieldset>
+                              <fieldset>
+                                  <div class="form-card" style="margin-top: -60px; border: none; box-shadow: none; display: inline;"> 
+                                      <table style="margin-top: -40px;">
+                                          <tr>
+                                              <th style="background-color: white;"></th>
+                                              <th>Initial</th>
+                                              <th>Executive</th>
+                                              <th>Customized</th>
+                                          </tr>
+                                          <tr>
+                                              <td class="pri"><b>Financial study</b></td>
+                                             
+                                          </tr>
+                                          <tr>
+                                              <td><b>Projection cost:</b>
+                                  <br>• Pre-operating expenses
+                                  <br>• Pre-forma Income Statement
+                                  <br>• Pre-forma Balance Sheet Statement
+                                  <br>• Pre-forma Cash Flow Statement
+                                  <br>• Pre-forma Change on Equity Statement
+                                  <br>• Working capital
+                                  <br>• Income tax</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="font-weight: bold; ">5 Years</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="font-weight: bold; ">7 Years</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="font-weight: bold; ">Customized</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Sources of finance and loan<br> & interest calculations</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Cost of operation analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Break-even analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Profitability analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>NPV & IRR</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Payback period</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Sensitivity analysis</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td>Financial study conclusion</td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;"><span style="color: red; font-weight: bold;">&#x2718;</span></td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                              <td class="basic" style="text-align: center; line-height: 30px;">
+                                              <span style="color: green; font-weight: bold; font-size: 24px;">✓</span>
+                                              </td>
+                                          </tr>
+                                          <tr>
+                                              <td class="pri">Pricing</td>
+                                              <td class="basic pri">1,100 OMR</td>
+                                              <td class="pro pri">4,500 OMR</td>
+                                              <td class="premium pri">Customized</td>
+                                          </tr>
+                                      </table>
+                                  </div>
+                                  <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                  <input type="button" name="next" class="next action-button" value="Next Step"/>
+                              </fieldset>
+                              
+                              <fieldset>
+                                      <div class="row justify-content-center">
+                                          <div class="col-3">
+                                              <!-- <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> -->
+                                          </div>
+                                      </div>
+                                      <br><br>
+                                      <div class="row justify-content-center">
+                                      <div class="container">
+  
+                                      <p class="text-info text-center">SELECTED ITEMS: <b class="text-danger" id="selItem"></b> </p>
+  <div class="container">
+    <div class="row hovering">
+  <table id="tblcreators" class="table text-center table-striped table-dark">
+    <thead class="text-uppercase thead-dark">
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Package</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <th scope="row" >1</th>
+        <td onclick="navigateToPage('services/initial.html')">Initial</td>
+        <td onclick="navigateToPage('services/initial.html')">1,100 OMR</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td onclick="navigateToPage('services/Executive.html')">Executive</td>
+        <td onclick="navigateToPage('services/Executive.html')">4,500 OMR	</td>
+      </tr>
+      <tr>
+        <th scope="row" id="3" >3</th>
+        <td onclick="navigateToPage('services/Customized.html')">Customized</td>
+        <td onclick="navigateToPage('services/Customized.html')">Customized</td>
+      </tr>
+    </tbody>
+  
+  </table>
+  
+  </div>
+  </div>
+  
+                                  </div>    
+                                  
+                                      <div class="col-7 text-center">
+                                              
+                                              <br>
+                                                                               <script>
+  
+                                                                                      // This will display the selected Item on screen
+  let selectedItem = document.getElementById("selItem");
+  // This function will handle the row selected click event
+  const getData=() =>{
+    // To store the content of the selected row
+    let trValues = ""
+    // Get table reference into the table variable
+    let table = document.getElementById("tblcreators");
+    // Iterate the rows on this object
+    let rows = table.getElementsByTagName("tr");
+      
+    for (i = 0; i < rows.length; i++) {
+      let currentRow = table.rows[i];
+      // Create the clickable Handler function
+  
+      let createClickHandler =
+        (row)=> {
+          return () => {
+            // Get selected row child elements content
+            let trValues = row.innerText;
+            console.table(trValues);
+            // Assign this to the selectedItem DOM element
+            selectedItem.innerHTML = trValues;
+          };
+        };
+  // When clicking on the row, run this function
+      currentRow.onclick = createClickHandler(currentRow);
+          
+    }
+  }
+  // Starts the function when this window loads
+  window.onload = getData();
+                                   
+  
+  
+  
+  // // end of the packages src
+  
+  
+  //   const valueCells1 = document.querySelectorAll(".value-cell-1, .value-cell-2");
+  //   let totalValue1 = 0;
+  //   let totalValue2 = 0;
+  
+  //   valueCells1.forEach((cell) => {
+  //     cell.addEventListener("click", function () {
+  //       const value = parseInt(this.getAttribute("data-value"));
+  //       if (this.style.backgroundColor === "green") {
+  //         if (this.classList.contains("value-cell-1")) {
+  //           totalValue1 -= value;
+  //         } else {
+  //           totalValue2 -= value;
+  //         }
+  //         this.style.backgroundColor = "";
+  //       } else {
+  //         if (this.classList.contains("value-cell-1")) {
+  //           totalValue1 += value;
+  //         } else {
+  //           totalValue2 += value;
+  //         }
+  //         this.style.backgroundColor = "green";
+  //       }
+  //       document.querySelector("#total-value-1").textContent = totalValue1 + "%";
+  //       document.querySelector("#total-value-2").textContent = totalValue2 + "%";
+  //       document.querySelector("#total-value-3").textContent =
+  //         (totalValue1 * 1100) / 100 + " OMR";
+  //       document.querySelector("#total-value-4").textContent =
+  //         (totalValue2 * 4500) / 100 + " OMR";
+  //       document.querySelector("#total-value-5").textContent =
+  //         1100 - (totalValue1 * 1100) / 100 + " OMR";
+  //       document.querySelector("#total-value-6").textContent =
+  //         4500 - (totalValue2 * 4500) / 100 + " OMR";
+        
+  //       // Show only the selected package column
+  //       const selectedPackage = document.getElementById("selItem").textContent.trim().toLowerCase();
+  //       const columns = document.querySelectorAll(".pri:not(#" + selectedPackage + ")");
+  //       columns.forEach((column) => {
+  //         column.style.display = "none";
+  //       });
+  //       const selectedColumn = document.getElementById(selectedPackage);
+  //       selectedColumn.style.display = "table-cell";
+  //     });
+  //   });
+  </script>
+                                     <script type="text/javascript">
+  function navigateToPage(url) {
+    window.location.href = url;
+  }
+  </script>
+                                              </div>
+                                  <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                                  <!-- <input type="button" name="next" class="next action-button" value="Next Step"/> -->
+                              </fieldset>
+                                              
+                                          </div>
+                                      </div>
+                                  
+                                  </div>
+                                  
+                              </fieldset>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </body>
+</html>
