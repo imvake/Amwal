@@ -2177,6 +2177,7 @@ Portfolio
 .our-portfolio .showed-content img {
   max-width: 100px;
 }
+<<<<<<< HEAD
 
 @-webkit-keyframes scroll {
   0% {
@@ -2251,3 +2252,5 @@ Portfolio
   bottom: 0;
   
 }
+=======
+>>>>>>> eebbdcbf950def97fc0ad18c0b7d7d745c56b28d
