@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <head>
+    <link
+      rel="stylesheet"
+      id="stylesheet-css"
+      href="services/js/ebootstrap.min.css"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="stylesheet-css"
+      href="services/js/bootstrap.bundle.min.js"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="stylesheet-css"
+      href="fontawesome.css"
+      type="text/css"
+      media="all"
+    />
+
+    <script src="services/js/jquery.min.js"></script>
+
+    <style>
+      body {
+        background-color: white; /* #222022or background-image: url('image.jpg'); */
+      }
+
+      table {
+        width: 80%; /* Adjust to desired width */
+        height: 300px; /* Adjust to desired height */
+        margin: 50px auto 0; /* Add margin-top of 50px */
+        max-height: 300px; /* Add maximum height for table */
+        overflow-y: auto; /* Add scrollbar when content exceeds max-height */
+        /*border-collapse: collapse; */ /* removes the space between cells */
+        border-spacing: 2px; /* removes the space between cells */
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: center;
+        border-bottom: 1px solid white;
+        border-radius: 10px;
+      }
+      td:first-child:hover {
+        background-color: #f2f2f2;
+        /*cursor: pointer;*/
+        background-color: #decc90;
+      }
+      td:first-child:hover ~ td {
+        transform: scale(0.95);
+        transition: transform 0.2s ease-in-out;
+      }
+
+      tr:hover td {
+        background-color: #c6a32d;
+      } /*DECC90*/
+
+      th {
+        background-color: #c6a32d;
+        color: white;
+        border-top: 0px white;
+        border-bottom: 0px solid black;
+        border-spacing: 2px;
+      }
+
+      td.basic {
+        background-color: #e6e6e6;
+      }
+      td.pro {
+        background-color: #e6e6e6;
+      }
+      td.premium {
+        background-color: #e6e6e6;
+      }
+      td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #c6a32d;
+        background-color: #f2f2f2;
+        border-left: 1px solid #c6a32d;
+        border-right: 1px solid #c6a32d;
+      }
+
+      /* Add styles for the pricing */
+      .pricing {
+        font-size: 2em;
+        color: #151515;
+      }
+      td.pri {
+        background-color: #c6a32d;
+        pointer-events: none;
+      }
+      /*        #progressbar {
+margin-bottom: 30px;
+overflow: hidden;
+color: lightgrey;
+    }
+    #progressbar .active {
+color: #000000;
+}*/
+
+      /*form styles*/
+      #msform {
+        text-align: center;
+        position: relative;
+        margin-top: 20px;
+      }
+
+      #msform fieldset .form-card {
+        border: 0 none;
+        border-radius: 0px;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+        padding: 20px 40px 30px 40px;
+        box-sizing: border-box;
+        width: 94%;
+        margin: 0 3% 20px 3%;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+      }
+
+      #msform fieldset {
+        border: 0 none;
+        border-radius: 0.5rem;
+        box-sizing: border-box;
+        width: 100%;
+        margin: 0;
+        padding-bottom: 20px;
+
+        /*stacking fieldsets above each other*/
+        position: relative;
+      }
+
+      /*Hide all except first fieldset*/
+      #msform fieldset:not(:first-of-type) {
+        display: none;
+      }
+
+      #msform fieldset .form-card {
+        text-align: left;
+        color: black;
+      }
+
+      #msform input,
+      #msform textarea {
+        padding: 0px 8px 4px 8px;
+        border: none;
+        border-bottom: 1px solid;
+        border-radius: 0px;
+        margin-bottom: 25px;
+        margin-top: 2px;
+        width: 100%;
+        box-sizing: border-box;
+        font-family: montserrat;
+        color: #2c3e50;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+
+      #msform input:focus,
+      #msform textarea:focus {
+        -moz-box-shadow: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        border: none;
+        font-weight: bold;
+        border-bottom: 2px solid;
+        outline-width: 0;
+      }
+
+      /*Blue Buttons*/
+      #msform .action-button {
+        width: 100px;
+        background: #c6a32d;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+      }
+
+      #msform .action-button:hover,
+      #msform .action-button:focus {
+        box-shadow: 0 0 0 2px, 0 0 0 3px rgb(0, 0, 0);
+      }
+
+      /*Previous Buttons*/
+      #msform .action-button-previous {
+        width: 100px;
+        background: #c6a32d;
+        font-weight: bold;
+        color: white;
+        border: 0 none;
+        border-radius: 25px;
+        cursor: pointer;
+        padding: 10px 5px;
+        margin: 10px 5px;
+      }
+
+      #msform .action-button-previous:hover,
+      #msform .action-button-previous:focus {
+        box-shadow: 0 0 0 2px white, 0 0 0 3px #000000;
+      }
+
+      /*Dropdown List Exp Date*/
+      select.list-dt {
+        border: none;
+        outline: 0;
+        border-bottom: 1px solid #ccc;
+        padding: 2px 5px 3px 5px;
+        margin: 2px;
+      }
+
+      select.list-dt:focus {
+        border-bottom: 2px solid skyblue;
+      }
+
+      /*The background card*/
+      .card {
+        z-index: 0;
+        border: none;
+        border-radius: 0.5rem;
+        position: relative;
+      }
+
+      /*FieldSet headings*/
+      .fs-title {
+        font-size: 25px;
+        color: #2c3e50;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      /*progressbar*/
+      #progressbar {
+        margin-bottom: 30px;
+        overflow: hidden;
+        color: lightgrey;
+      }
+
+      #progressbar .active {
+        color: #c6a32d;
+      }
+
+      #progressbar li {
+        list-style-type: none;
+        font-size: 12px;
+        width: 25%;
+        float: left;
+        position: relative;
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      /*Icons in the ProgressBar*/
+      #progressbar #account:before {
+        font-family: FontAwesome;
+        content: "✓";
+      }
+
+      #progressbar #personal:before {
+        font-family: FontAwesome;
+      }
+
+      #progressbar #payment:before {
+        font-family: FontAwesome;
+      }
+
+      #progressbar #confirm:before {
+        font-family: FontAwesome;
+      }
+
+      /*ProgressBar before any progress*/
+      #progressbar li:before {
+        width: 50px;
+        height: 50px;
+        line-height: 45px;
+        display: block;
+        font-size: 18px;
+        color: #ffffff;
+        background: lightgray;
+        border-radius: 50%;
+        margin: 0 auto 10px auto;
+        padding: 2px;
+        background-color: red;
+        content: "✓";
+      }
+
+      /*ProgressBar connectors*/
+      #progressbar li:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: lightgray;
+        position: absolute;
+        left: 0;
+        top: 25px;
+        background-color: red;
+        z-index: -1;
+      }
+
+      #value-cell-1 td {
+        cursor: pointer;
+      }
+
+      /*Color number of the step and the connector before it*/
+      #progressbar li.active:before,
+      #progressbar li.active:after {
+        background: #c6a32d;
+      }
+
+      /*Imaged Radio Buttons*/
+      .radio-group {
+        position: relative;
+        margin-bottom: 25px;
+      }
+
+      .radio {
+        display: inline-block;
+        width: 204;
+        height: 104;
+        border-radius: 0;
+        background: lightblue;
+        box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+        cursor: pointer;
+        margin: 8px 2px;
+      }
+
+      .radio:hover {
+        box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .radio.selected {
+        box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      /*Fit image in bootstrap div*/
+      .fit-image {
+        width: 100%;
+        object-fit: cover;
+      }
+    </style>
+
+    <title>Pricing Table</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var opacity;
+
+        $(".next").click(function () {
+          current_fs = $(this).parent();
+          next_fs = $(this).parent().next();
+
+          //Add Class Active
+          $("#progressbar li")
+            .eq($("fieldset").index(next_fs))
+            .addClass("active");
+
+          //show the next fieldset
+          next_fs.show();
+          //hide the current fieldset with style
+          current_fs.animate(
+            { opacity: 0 },
+            {
+              step: function (now) {
+                // for making fielset appear animation
+                opacity = 1 - now;
+
+                current_fs.css({
+                  display: "none",
+                  position: "relative",
+                });
+                next_fs.css({ opacity: opacity });
+              },
+              duration: 600,
+            }
+          );
+        });
+
+        $(".previous").click(function () {
+          current_fs = $(this).parent();
+          previous_fs = $(this).parent().prev();
+
+          //Remove class active
+          $("#progressbar li")
+            .eq($("fieldset").index(current_fs))
+            .removeClass("active");
+
+          //show the previous fieldset
+          previous_fs.show();
+
+          //hide the current fieldset with style
+          current_fs.animate(
+            { opacity: 0 },
+            {
+              step: function (now) {
+                // for making fielset appear animation
+                opacity = 1 - now;
+
+                current_fs.css({
+                  display: "none",
+                  position: "relative",
+                });
+                previous_fs.css({ opacity: opacity });
+              },
+              duration: 600,
+            }
+          );
+        });
+
+        $(".radio-group .radio").click(function () {
+          $(this).parent().find(".radio").removeClass("selected");
+          $(this).addClass("selected");
+        });
+
+        $(".submit").click(function () {
+          return false;
+        });
+      });
+    </script>
+    <!-- MultiStep Form -->
+    <div class="container-fluid" id="grad1">
+      <div class="row justify-content-center mt-0">
+        <div
+          class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2"
+        >
+          <div class="card px-0 pt-4 pb-0 mt-3 mb-3">
+            <div class="row">
+              <div class="col-md-12 mx-0">
+                <form id="msform">
+                  <!-- progressbar -->
+                  <ul id="progressbar">
+                    <li class="active" id="account">
+                      <strong>Services</strong>
+                    </li>
+                    <li id="personal"><strong>Terms & Conditions</strong></li>
+                    <li id="payment"><strong>Personal Details</strong></li>
+                    <li id="confirm"><strong>Confirmation</strong></li>
+                  </ul>
+                  <!-- fieldsets -->
+                  <fieldset>
+                    <div
+                      class="form-card"
+                      style="
+                        margin-top: -60px;
+                        border: none;
+                        box-shadow: none;
+                        display: inline;
+                      "
+                    >
+                      <table style="margin-top: -40px">
+                        <tr>
+                          <th>Service</th>
+                          <th>Company Size</th>
+                          <th>Price (OMR)</th>
+                          <th>VAT 5% (OMR)</th>
+                          <th>Total (OMR)</th>
+                        </tr>
+                        <tr>
+                          <td><b>Accounting Services + Free ERP</b></td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >Micro</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >90</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >4.5</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span
+                              style="
+                                color: green;
+                                font-weight: bold;
+                                font-size: 20px;
+                              "
+                              >94.5</span
+                            >
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td><b>Accounting Services + Free ERP</b></td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >Small</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >150</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >7.5</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span
+                              style="
+                                color: green;
+                                font-weight: bold;
+                                font-size: 20px;
+                              "
+                              >157.5</span
+                            >
+                          </td>
+                        </tr>
+                        <tr>
+                          <td><b>Accounting Services + Free ERP</b></td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >Medium</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >300</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span style="font-weight: ; font-size: 20px"
+                              >15</span
+                            >
+                          </td>
+                          <td
+                            class="basic"
+                            style="text-align: center; line-height: 30px"
+                          >
+                            <span
+                              style="
+                                color: green;
+                                font-weight: bold;
+                                font-size: 20px;
+                              "
+                              >315</span
+                            >
+                          </td>
+                        </tr>
+
+                        <!--    
+                                        <tr>
+                                            <td class="pri">Pricing</td>
+                                            <td class="basic pri">260 OMR</td>
+                                            <td class="pro pri">2500 OMR</td>
+                                            
+                                        </tr> -->
+                      </table>
+                    </div>
+                    <input
+                      type="button"
+                      name="next"
+                      class="next action-button"
+                      value="Next Step"
+                    />
+                  </fieldset>
+                  <fieldset>
+                    <div class="form-card">
+                      <p>
+                        Payment Terms:<br />
+                        <br />
+                        &bull; Service fees are paid at the end of each
+                        month.<br />
+                        &bull; All service details are included in the
+                        contract.<br />
+                        &bull; The amount is increased according to the increase
+                        in the number of transactions.<br />
+                        &bull;
+                        <b
+                          >There's an annual fees of 30 OMR for hosting and
+                          support for the ERP system.</b
+                        ><br />
+                      </p>
+                    </div>
+                    <input
+                      type="button"
+                      name="previous"
+                      class="previous action-button-previous"
+                      value="Previous"
+                    />
+                    <input
+                      type="button"
+                      name="next"
+                      class="next action-button"
+                      value="Next Step"
+                    />
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="form-card">
+                      <label class="pay">Name</label>
+                      <input type="text" name="Name" placeholder="" id="Name" />
+                      <div class="row">
+                        <div class="col-9">
+                          <label class="pay">Number</label>
+                          <input
+                            type="number"
+                            name="Number"
+                            placeholder=""
+                            id="phoneNo"
+                          />
+                        </div>
+                        <div class="col-3">
+                          <label class="pay">CR</label>
+                          <input
+                            type="number"
+                            name="CR_Number"
+                            id="CR_Number"
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-3">
+                          <label class="pay">Service</label>
+                        </div>
+                        <div class="col-9">
+                          <select class="list-dt" id="Service" name="Service">
+                            <option selected></option>
+                            <option>Feasibility Study</option>
+                            <option>External Auditing</option>
+                            <option>Accounting</option>
+                            <option>Web Application</option>
+                            <option>ERP System</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <input
+                      type="button"
+                      name="previous"
+                      class="previous action-button-previous"
+                      value="Previous"
+                    />
+                    <input
+                      type="submit"
+                      name="make_payment"
+                      class="next action-button"
+                      onclick="snedSMTP()"
+                      value="Confirm"
+                    />
+
+                    <script>
+
+
+                          function snedSMTP(){
+                             const Name = document.getElementById("Name").value;
+                             const phoneNo = document.getElementById("phoneNo").value;
+                             const CR_Number = document.getElementById("CR_Number").value;
+                             const Service = document.getElementById("Service").value;
+
+                      Email.send({
+                          Host: "smtp.elasticemail.com",
+                          Username: "info@amwal.om",
+                          Password: "1A79978194941A240BD14E11E8B3A5259F40",
+                          To: "info@amwal.om",
+                          From: ${Name},
+                          Subject: "Digitalization",
+                          Body: `CR is ${CR_Number} <br>
+                          Service Chosen ${Service}, <br>
+                          Phone No: ${phoneNo}
+                          `,
+                      }).then((message) => alert(message));
+                      }
+                    </script>
+                  </fieldset>
+
+                  <fieldset>
+                    <div class="form-card">
+                      <h2 class="fs-title text-center">Success !</h2>
+                      <br /><br />
+                      <div class="row justify-content-center">
+                        <div class="col-3">
+                          <!-- <img src="https://img.icons8.com/color/96/000000/ok--v2.png" class="fit-image"> -->
+                        </div>
+                      </div>
+                      <br /><br />
+                      <div class="row justify-content-center">
+                        <div class="col-7 text-center">
+                          <h5>You Have Successfully Submitted you data</h5>
+                          <a href="http://localhost/Amwal/Home/">Go To Home</a>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

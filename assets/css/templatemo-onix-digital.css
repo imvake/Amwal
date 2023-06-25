@@ -247,8 +247,8 @@ body {
   font-size: 30px;
   text-transform: uppercase;
   font-weight: 700;
-  color: #ff695f;
-  opacity: 0.15;
+  color: #3b3332;
+  opacity: 0.65;
 }
 
 .main-blue-button a {
@@ -1632,7 +1632,7 @@ Video
 
 .our-videos .nacc .thumb iframe {
   border-radius: 23px;
-  height: 675px;
+  height: 775px;
 }
 
 .our-videos .nacc .thumb .overlay-effect {
@@ -2177,7 +2177,6 @@ Portfolio
 .our-portfolio .showed-content img {
   max-width: 100px;
 }
-<<<<<<< HEAD
 
 @-webkit-keyframes scroll {
   0% {
@@ -2250,7 +2249,4 @@ Portfolio
 .insider {
   position: relative;
   bottom: 0;
-  
 }
-=======
->>>>>>> eebbdcbf950def97fc0ad18c0b7d7d745c56b28d
